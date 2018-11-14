@@ -30,7 +30,7 @@ Home.prototype.clearData = function(){
 		var square = $(this);
 		square.data('checked', false);
 		square.data('checked-by', '');
-		square.find('img').attr('src', '').hide();
+		square.find('img').attr('src', './Blank.png');
 		square.removeClass('checked-winning-square');
 	});
 };
@@ -52,7 +52,7 @@ Home.prototype.checkSquare = function(){
 	square.data('checked-by', home.currentTurn);
 	switch (home.currentTurn){
 		case 1:
-			square.find('img').attr('src', home.checkedPlayerOneImage).show();
+			square.find('img').attr('src', home.checkedPlayerOneImage);
 			home.checkedPlayerOne.push(square.data('numeric-position'));
 			home.checkWinner(1);
 			if (!home.gameOver) {
@@ -61,7 +61,7 @@ Home.prototype.checkSquare = function(){
 			}
 			break;
 		case 2:
-			square.find('img').attr('src', home.checkedPlayerTwoImage).show();
+			square.find('img').attr('src', home.checkedPlayerTwoImage);
 			home.checkedPlayerTwo.push(square.data('numeric-position'));
 			home.checkWinner(2);
 			if (!home.gameOver) {
