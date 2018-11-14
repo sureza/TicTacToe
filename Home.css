@@ -26,3 +26,19 @@ body{
 	background-color: green;
 }
 
+
+@media only screen and (max-width: 480px){  
+	.play-image{
+		width: 80px;
+		height: 80px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 480px) {
+	.gallery-image{
+		width: 120px;
+		height: 120px;
+	}
+}
+
