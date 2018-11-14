@@ -1,0 +1,28 @@
+body{
+	background-color: #1C4658;
+	color: #022839;
+}
+
+.grid-square{
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	min-height: 80px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #6E8189;
+}
+
+
+.checked-player-one{
+	color:blue;
+}
+
+.checked-player-two{
+	color:red;
+}
+
+.checked-winning-square{
+	background-color: green;
+}
+
