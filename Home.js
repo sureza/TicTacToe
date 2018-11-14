@@ -4,8 +4,8 @@ var home = null;
 	this.gameOver = false;
 	this.checkedPlayerOne = null;
 	this.checkedPlayerTwo = null;
-	this.checkedPlayerOneClasses = 'fas fa-times fa-5x checked-player-one';
-	this.checkedPlayerTwoClasses = 'far fa-circle fa-5x checked-player-two';
+	this.checkedPlayerOneImage = './X.png';
+	this.checkedPlayerTwoImage = './O.png';
 };
 
 Home.prototype.initialize = function(){
@@ -30,7 +30,7 @@ Home.prototype.clearData = function(){
 		var square = $(this);
 		square.data('checked', false);
 		square.data('checked-by', '');
-		square.find('i').attr('class', '');
+		square.find('img').attr('src', '').hide();
 		square.removeClass('checked-winning-square');
 	});
 };
@@ -52,7 +52,7 @@ Home.prototype.checkSquare = function(){
 	square.data('checked-by', home.currentTurn);
 	switch (home.currentTurn){
 		case 1:
-			square.find('i').attr('class', home.checkedPlayerOneClasses);
+			square.find('img').attr('src', home.checkedPlayerOneImage).show();
 			home.checkedPlayerOne.push(square.data('numeric-position'));
 			home.checkWinner(1);
 			if (!home.gameOver) {
@@ -61,7 +61,7 @@ Home.prototype.checkSquare = function(){
 			}
 			break;
 		case 2:
-			square.find('i').attr('class', home.checkedPlayerTwoClasses);
+			square.find('img').attr('src', home.checkedPlayerTwoImage).show();
 			home.checkedPlayerTwo.push(square.data('numeric-position'));
 			home.checkWinner(2);
 			if (!home.gameOver) {
